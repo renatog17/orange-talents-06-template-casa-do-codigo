@@ -10,16 +10,11 @@ import br.com.zupacademy.renato.casadocodigo.model.Autor;
 
 public class AutorForm {
 
-	@NotNull
-	@NotEmpty
+	@NotNull @NotEmpty
 	String nome;
-	@NotNull
-	@Email
-	@NotEmpty
+	@NotNull @Email @NotEmpty
 	String email;
-	@NotNull
-	@NotEmpty
-	@Length(max = 400)
+	@NotNull @NotEmpty @Length(max = 400)
 	String descricao;
 
 	public String getNome() {
