@@ -7,7 +7,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.Validator;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,10 +37,11 @@ public class AutorController {
 	@PostMapping
 	@Transactional
 	public ResponseEntity<Autor> cadastrar(@RequestBody @Valid AutorForm autorForm, UriComponentsBuilder uriBuilder){
-		Autor autor = autorForm.converterFormParaModel();
+		Autor autor = autorForm.toModel();
 		autorRepository.save(autor);
-		URI uri = uriBuilder.path("/autor/{id}").buildAndExpand(autor.getId()).toUri();
-		return ResponseEntity.created(uri).body(autor);
+		//URI uri = uriBuilder.path("/autor/{id}").buildAndExpand(autor.getId()).toUri();
+		//return ResponseEntity.created(uri).body(autor);
+		return ResponseEntity.ok().build();
 	}
 	
 }

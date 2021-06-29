@@ -19,12 +19,13 @@ public class Autor {
 	private Long id;
 	@NotBlank
 	private String nome;
-	@NotBlank @Email
+	@NotBlank @Email @Column(unique=true)
 	private String email;
 	@NotBlank @Column(columnDefinition = "VARCHAR(400)")
 	private String descricao;
 	private LocalDateTime instanteRegistro = LocalDateTime.now();
 
+	@Deprecated
 	public Autor() {
 		
 	}
