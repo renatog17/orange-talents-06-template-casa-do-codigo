@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
+import br.com.zupacademy.renato.casadocodigo.config.validacao.UniqueValue;
 import br.com.zupacademy.renato.casadocodigo.model.Autor;
 import br.com.zupacademy.renato.casadocodigo.model.Categoria;
 import br.com.zupacademy.renato.casadocodigo.model.Livro;
@@ -22,7 +23,7 @@ import br.com.zupacademy.renato.casadocodigo.repository.CategoriaRepository;
 
 public class LivroForm {
 
-	@NotBlank
+	@NotBlank @UniqueValue(domainClass = Livro.class, fieldName = "titulo")
 	String titulo;
 	@NotBlank
 	String resumo;
