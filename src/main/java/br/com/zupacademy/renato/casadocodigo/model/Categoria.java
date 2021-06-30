@@ -19,9 +19,9 @@ public class Categoria {
 
 	@Deprecated
 	public Categoria() {
-		
+
 	}
-	
+
 	public Categoria(@NotBlank String nome) {
 		super();
 		this.nome = nome;
@@ -30,6 +30,5 @@ public class Categoria {
 	public String getNome() {
 		return nome;
 	}
-	
-	
+
 }

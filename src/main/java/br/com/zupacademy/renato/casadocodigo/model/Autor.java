@@ -19,19 +19,21 @@ public class Autor {
 	private Long id;
 	@NotBlank
 	private String nome;
-	@NotBlank @Email @Column(unique=true)
+	@NotBlank
+	@Email
+	@Column(unique = true)
 	private String email;
-	@NotBlank @Column(columnDefinition = "VARCHAR(400)")
+	@NotBlank
+	@Column(columnDefinition = "VARCHAR(400)")
 	private String descricao;
 	private LocalDateTime instanteRegistro = LocalDateTime.now();
 
 	@Deprecated
 	public Autor() {
-		
+
 	}
-	
-	public Autor(@NotBlank String nome, @NotBlank @Email String email,
-			@NotBlank @Size(max = 400) String descricao) {
+
+	public Autor(@NotBlank String nome, @NotBlank @Email String email, @NotBlank @Size(max = 400) String descricao) {
 		super();
 		this.nome = nome;
 		this.email = email;
