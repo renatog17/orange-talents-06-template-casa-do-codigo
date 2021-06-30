@@ -6,13 +6,14 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+import br.com.zupacademy.renato.casadocodigo.config.validacao.UniqueValue;
 import br.com.zupacademy.renato.casadocodigo.model.Autor;
 
 public class AutorForm {
 
 	@NotNull @NotEmpty
 	String nome;
-	@NotNull @Email @NotEmpty
+	@NotNull @Email @NotEmpty @UniqueValue(domainClass = Autor.class, fieldName = "email")
 	String email;
 	@NotNull @NotEmpty @Length(max = 400)
 	String descricao;

@@ -27,14 +27,6 @@ public class CategoriaController {
 	@Autowired
 	CategoriaRepository categoriaRepository;
 	
-	@Autowired
-	private ProibeCategoriaNomeDuplicadoValidator proibeCategoriaNomeDuplicadoValidator;
-	
-	@InitBinder
-	public void init(WebDataBinder binder) {
-		binder.addValidators(proibeCategoriaNomeDuplicadoValidator);
-	}
-	
 	@PostMapping
 	@Transactional
 	public ResponseEntity<Categoria> cadastrar(@RequestBody @Valid CategoriaForm categoriaForm, UriComponentsBuilder uriBuilder) {
