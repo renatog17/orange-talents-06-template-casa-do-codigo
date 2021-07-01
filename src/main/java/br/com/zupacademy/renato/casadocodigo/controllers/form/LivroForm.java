@@ -51,9 +51,14 @@ public class LivroForm {
 	public Livro toModel(CategoriaRepository categoriaRepository, AutorRepository autorRepository) {
 		Optional<Categoria> categoria = categoriaRepository.findById(this.idCategoria);
 		Optional<Autor> autor = autorRepository.findById(this.idAutor);
+		
+		
+		if(autor.isPresent() && categoria.isPresent()) {
 		Livro livro = new Livro(this.titulo, this.resumo, this.sumario, this.preco, this.qtdPaginas, this.isbn,
 				this.dataPublicacao, categoria.get(), autor.get());
 		return livro;
+		}
+		return null;
 	}
 
 	@Override
