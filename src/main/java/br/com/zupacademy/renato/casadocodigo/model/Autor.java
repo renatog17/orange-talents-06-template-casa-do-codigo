@@ -43,4 +43,14 @@ public class Autor {
 	public String getEmail() {
 		return this.email;
 	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+	
+	
 }

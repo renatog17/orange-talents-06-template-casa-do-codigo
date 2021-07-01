@@ -30,7 +30,6 @@ public class CategoriaController {
 	@PostMapping
 	@Transactional
 	public ResponseEntity<Categoria> cadastrar(@RequestBody @Valid CategoriaForm categoriaForm, UriComponentsBuilder uriBuilder) {
-		System.out.println("tá chegando aqui");
 		Categoria categoria = categoriaForm.toModel();
 		categoriaRepository.save(categoria);
 		//URI uri = uriBuilder.path("categoria/{id}").buildAndExpand(categoria.getId()).toUri();
