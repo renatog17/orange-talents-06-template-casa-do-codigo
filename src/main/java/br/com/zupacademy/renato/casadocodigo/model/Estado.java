@@ -29,4 +29,9 @@ public class Estado {
 		this.pais = pais;
 	}
 
+	public String getNome() {
+		return nome;
+	}
+
+	
 }
